@@ -1,0 +1,32 @@
+<!doctype html>
+<!-- Trimmed from instagram.com's live DOM (2026-10-21); class names dropped, structure kept. -->
+<html>
+<body>
+<div id="common">
+  <!-- app shell: sidebar + feed -->
+  <div><div><div id="app">
+    <div id="sidebar">
+      <a role="link" href="/"><svg aria-label="Home" role="img"></svg></a>
+      <span><span><div>
+        <a role="link" href="#" id="notif-link">
+          <div><div>
+            <div id="icon-wrap"><svg aria-label="Notifications" role="img" id="notif-svg"><title>Notifications</title></svg></div>
+            <div id="dot-wrap"><div id="dot" style="background: rgb(255, 48, 64); width: 12px; height: 12px"></div></div>
+          </div></div>
+          <div><div><div><span><span>Notifications</span></span></div></div></div>
+        </a>
+      </div></span></span>
+    </div>
+    <div id="feed">
+      <main role="main">
+        <div role="tooltip" id="feed-tooltip">feed tooltip</div>
+      </main>
+    </div>
+  </div></div></div>
+  <!-- portal layer (position: fixed in the live page) holding the pop-out bubble -->
+  <div><div><div><div style="position: fixed"><div role="button">
+    <div><div role="tooltip" id="bubble"><span aria-label="Like"></span><span>1</span></div></div>
+  </div></div></div></div></div>
+</div>
+</body>
+</html>
