@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ig-hush
-// @namespace    https://julianmontez.com/ig-hush
-// @version      1.0.0
+// @namespace    https://github.com/jpmontez
+// @version      1.0.1
 // @description  Hide Instagram's red Notifications dot and the pop-out activity bubble in the sidebar.
 // @match        https://www.instagram.com/*
 // @run-at       document-start
