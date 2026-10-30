@@ -5,7 +5,12 @@ A userscript that hides Instagram's notification lures in the web sidebar:
 - the red dot on the **Notifications** heart
 - the red **♥ 1** bubble that pops out next to it after the page loads
 
-It's CSS only and doesn't remove anything from the page. Notifications still work: click the heart and the panel opens as usual.
+That part is CSS only and doesn't remove anything from the page. Notifications still work: click the heart and the panel opens as usual.
+
+It also adds a small panel to your [story archive](https://www.instagram.com/archive/stories/):
+
+- **Scan** counts your archived stories.
+- **Delete all** (click twice to confirm) permanently deletes every archived story. It deletes one, checks it's really gone, then does the rest about 1s apart. If Instagram rate-limits it, it waits, doubles the gap, and keeps the slower pace for later runs. **Cancel** stops it. Deleting a story from the archive also removes it from any highlight it's in. Keep the tab in front while it runs: background tabs slow it to about one delete a minute.
 
 Works in Chrome (Tampermonkey) and Safari (Userscripts). It runs at `document-start` with `@grant none`, so the badges never show up, not even briefly.
 
@@ -42,6 +47,7 @@ npm test
 The tests load `test/fixture.html` (a trimmed copy of the live DOM) in jsdom and check that the dot and bubble are hidden while the nav, the feed and tooltips inside the feed stay visible.
 
 ## Limits
+- The archive panel uses Instagram's internal endpoints (see `CLAUDE.md`). When Instagram changes them, Scan or Delete stops with a message; nothing is deleted by mistake.
 - The selectors match English accessibility labels (`aria-label="Notifications"`). In other UI languages the badges won't be hidden.
 - Every `role="tooltip"` element in a portal layer, meaning anything outside the app shell, is hidden. The activity bubble was the only one seen on 2026-10-21.
 - If Instagram changes its markup, the badges come back. Nothing breaks. See `CLAUDE.md` for how to re-record the selectors.

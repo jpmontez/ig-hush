@@ -1,4 +1,4 @@
-import { test } from 'node:test';
+import { test, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { JSDOM } from 'jsdom';
@@ -8,6 +8,7 @@ const read = (p) => readFileSync(new URL(p, import.meta.url), 'utf8');
 const dom = new JSDOM(read('./fixture.html'), { runScripts: 'outside-only' });
 dom.window.eval(read('../ig-hush.user.js'));
 const { document, getComputedStyle } = dom.window;
+after(() => dom.window.close()); // stop the archive panel's interval
 const display = (id) => getComputedStyle(document.getElementById(id)).display;
 
 test('hides the red dot', () => assert.equal(display('dot-wrap'), 'none'));
