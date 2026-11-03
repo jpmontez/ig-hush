@@ -3,7 +3,7 @@
 Userscript (`ig-hush.user.js`) that hides Instagram's sidebar Notifications dot and the pop-out activity bubble (CSS injected at `document-start`), and adds a panel on `/archive/stories/` that scans and deletes the story archive. `@grant none`, no build step. The same file runs in Tampermonkey (Chrome) and Userscripts (Safari), so don't use GM_* APIs.
 
 ## Commands
-- `npm test`: node:test + jsdom. `ig-hush.test.js` checks the CSS against `test/fixture.html`; `archive.test.js` drives the panel against a fake Instagram `fetch`. Its tokens and IDs are synthetic: never commit real responses, they hold the session's tokens.
+- `bun test`: node:test (run by bun) + jsdom. `ig-hush.test.js` checks the CSS against `test/fixture.html`; `archive.test.js` drives the panel against a fake Instagram `fetch`. Its tokens and IDs are synthetic: never commit real responses, they hold the session's tokens.
 
 ## Releasing
 Installed copies update from `@updateURL`, which is the raw file on `main`. They only update when `@version` goes up, so bump it in every commit that changes the script.

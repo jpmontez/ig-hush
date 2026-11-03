@@ -41,8 +41,8 @@ Reload instagram.com while you have unseen activity. Neither the red dot nor the
 
 ## Develop
 ```sh
-npm install
-npm test
+bun install
+bun test
 ```
 The tests load `test/fixture.html` (a trimmed copy of the live DOM) in jsdom and check that the dot and bubble are hidden while the nav, the feed and tooltips inside the feed stay visible.
 
