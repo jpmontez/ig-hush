@@ -4,7 +4,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "node --test"
+    "test": "bun test"
   },
   "devDependencies": {
     "jsdom": "^30.1.3"
